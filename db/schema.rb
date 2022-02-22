@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_093401) do
+ActiveRecord::Schema.define(version: 2022_02_22_150340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -645,7 +645,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_093401) do
     t.jsonb "api_particulier_sources", default: {}
     t.boolean "instructeurs_self_management_enabled"
     t.boolean "routing_enabled"
-    t.boolean "procedure_expires_when_termine_enabled", default: false
+    t.boolean "procedure_expires_when_termine_enabled", default: true
     t.bigint "zone_id"
     t.index ["api_particulier_sources"], name: "index_procedures_on_api_particulier_sources", using: :gin
     t.index ["declarative_with_state"], name: "index_procedures_on_declarative_with_state"
