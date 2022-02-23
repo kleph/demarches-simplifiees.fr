@@ -39,6 +39,11 @@
         = t(:has_changes, scope: [:administrateurs, :revision_changes])
       = render partial: 'revision_changes', locals: { changes: @procedure.revision_changes }
 
+- if !@procedure.procedure_expires_when_termine_enabled?
+  .container{ :"data-test-suggest_expires_when_termine" => "true" }
+    .card.featured
+      .card-title
+        = render partial: 'administrateurs/procedures/suggest_expires_when_termine'
 .container
   %h2.procedure-admin-explanation Indispensable avant publication
   .procedure-grid
